@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dharshini A — B.Sc. Information Technology student and fresher seeking remote part-time opportunities." />
+  <title>Dharshini A | Digital Resume</title>
+  <style>
+    :root {
+      --bg: #08111f;
+      --surface: rgba(17, 31, 52, .78);
+      --surface-2: #12233a;
+      --text: #edf5ff;
+      --muted: #a9bad0;
+      --blue: #66b7ff;
+      --cyan: #62e3df;
+      --line: rgba(173, 205, 238, .16);
+      --shadow: 0 22px 60px rgba(0,0,0,.28);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 8% 8%, rgba(37, 119, 198, .23), transparent 30rem),
+        radial-gradient(circle at 90% 25%, rgba(33, 190, 190, .13), transparent 27rem),
+        var(--bg);
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1100px, calc(100% - 40px)); margin: auto; }
+    .nav {
+      position: sticky; top: 0; z-index: 20; backdrop-filter: blur(18px);
+      background: rgba(8,17,31,.78); border-bottom: 1px solid var(--line);
+    }
+    .nav-inner { height: 72px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { font-weight: 800; letter-spacing: .04em; }
+    .brand span { color: var(--cyan); }
+    .links { display: flex; gap: 25px; align-items: center; color: var(--muted); font-size: .93rem; }
+    .links a:hover { color: var(--cyan); }
+    .menu { display: none; border: 1px solid var(--line); color: var(--text); background: var(--surface); border-radius: 10px; padding: 8px 12px; }
+    .hero { padding: 92px 0 72px; display: grid; grid-template-columns: 1.4fr .8fr; gap: 52px; align-items: center; }
+    .eyebrow { color: var(--cyan); text-transform: uppercase; letter-spacing: .18em; font-size: .76rem; font-weight: 800; }
+    h1 { font-size: clamp(2.8rem, 7vw, 5.4rem); line-height: 1.02; letter-spacing: -.055em; margin: 14px 0 18px; }
+    h1 span { color: var(--blue); }
+    .lead { max-width: 650px; color: var(--muted); font-size: 1.08rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border-radius: 12px; padding: 12px 18px; font-weight: 750; border: 1px solid var(--line); transition: .2s ease; }
+    .btn.primary { color: #061322; background: linear-gradient(110deg, var(--blue), var(--cyan)); border: 0; }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(58,168,220,.18); }
+    .profile-card, .card { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; box-shadow: var(--shadow); backdrop-filter: blur(14px); }
+    .profile-card { padding: 28px; position: relative; overflow: hidden; }
+    .profile-card:before { content: ""; position: absolute; width: 190px; height: 190px; right: -85px; top: -85px; background: rgba(98,227,223,.12); border-radius: 50%; }
+    .avatar { width: 86px; height: 86px; display: grid; place-items: center; border-radius: 24px; font-size: 2rem; font-weight: 900; color: #071525; background: linear-gradient(135deg, var(--blue), var(--cyan)); margin-bottom: 20px; }
+    .profile-card h2 { margin: 0; font-size: 1.4rem; }
+    .profile-card p { color: var(--muted); margin: 4px 0 20px; }
+    .mini-list { display: grid; gap: 12px; font-size: .92rem; }
+    .mini-list div { display: flex; justify-content: space-between; gap: 12px; border-top: 1px solid var(--line); padding-top: 10px; }
+    .mini-list span:first-child { color: var(--muted); }
+    section { padding: 42px 0; }
+    .section-head { margin-bottom: 22px; }
+    .section-head small { color: var(--cyan); font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+    h2.section-title { font-size: clamp(1.8rem, 4vw, 2.5rem); margin: 5px 0; letter-spacing: -.035em; }
+    .section-sub { color: var(--muted); margin: 0; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .card { padding: 24px; }
+    .card h3 { margin: 0 0 9px; font-size: 1.1rem; }
+    .card p { color: var(--muted); margin: 0; }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+    .chip { padding: 8px 12px; border-radius: 999px; border: 1px solid rgba(102,183,255,.25); background: rgba(102,183,255,.08); color: #d9edff; font-size: .88rem; }
+    .timeline { border-left: 1px solid rgba(98,227,223,.4); padding-left: 22px; margin-left: 8px; }
+    .timeline-item { position: relative; padding: 0 0 8px; }
+    .timeline-item:before { content: ""; position: absolute; width: 10px; height: 10px; border-radius: 50%; background: var(--cyan); left: -28px; top: 8px; box-shadow: 0 0 0 5px rgba(98,227,223,.1); }
+    .timeline-item .muted { color: var(--muted); font-size: .92rem; }
+    .strengths { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .strength { padding: 17px 14px; text-align: center; border-radius: 15px; background: var(--surface-2); border: 1px solid var(--line); font-weight: 650; }
+    .contact { text-align: center; padding: 36px; background: linear-gradient(135deg, rgba(40,116,166,.2), rgba(98,227,223,.1)); }
+    .contact p { max-width: 620px; margin: 0 auto; }
+    footer { padding: 28px 0 38px; color: var(--muted); text-align: center; font-size: .88rem; }
+    .reveal { opacity: 0; transform: translateY(16px); transition: .6s ease; }
+    .reveal.show { opacity: 1; transform: none; }
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; padding-top: 62px; gap: 30px; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .strengths { grid-template-columns: 1fr 1fr; }
+      .menu { display: block; }
+      .links { display: none; position: absolute; left: 20px; right: 20px; top: 66px; padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: #102039; flex-direction: column; align-items: flex-start; }
+      .links.open { display: flex; }
+    }
+    @media print {
+      body { background: white; color: #172333; }
+      .nav, .actions, footer { display: none !important; }
+      .profile-card, .card { box-shadow: none; background: white; border: 1px solid #ccd6e0; }
+      .lead, .profile-card p, .card p, .section-sub, .muted { color: #425466 !important; }
+      .hero { padding: 25px 0; }
+      section { padding: 18px 0; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#home">DHARSHINI<span>.</span></a>
+      <button class="menu" id="menuBtn" aria-label="Open navigation" aria-expanded="false">Menu</button>
+      <nav class="links" id="navLinks">
+        <a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#interests">Interests</a><a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home" class="wrap">
+    <div class="hero">
+      <div>
+        <div class="eyebrow">Digital Resume · Fresher</div>
+        <h1>Hello, I'm<br><span>Dharshini A.</span></h1>
+        <p class="lead">A third-year B.Sc. Information Technology student interested in teamwork, e-commerce, freelancing and digital support. I am looking for a part-time, work-from-home opportunity where I can learn, contribute and grow.</p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:adharshini0504@gmail.com">✉ Contact Me</a>
+          <a class="btn" href="tel:+918778546134">☎ Call Me</a>
+          <button class="btn" onclick="window.print()">↓ Save / Print Resume</button>
+        </div>
+      </div>
+      <aside class="profile-card reveal">
+        <div class="avatar">DA</div>
+        <h2>Dharshini A</h2>
+        <p>College Student · Fresher</p>
+        <div class="mini-list">
+          <div><span>Education</span><strong>B.Sc. IT</strong></div>
+          <div><span>Study year</span><strong>3rd Year</strong></div>
+          <div><span>Availability</span><strong>4–5 hours/day</strong></div>
+          <div><span>Preference</span><strong>Remote · Part-time</strong></div>
+          <div><span>Location</span><strong>Tamil Nadu, India</strong></div>
+        </div>
+      </aside>
+    </div>
+
+    <section id="about" class="reveal">
+      <div class="section-head"><small>01 / About</small><h2 class="section-title">Career Objective</h2></div>
+      <div class="card">
+        <p>I am a motivated and responsible student seeking an entry-level remote opportunity. I have basic English communication, Tamil communication, average typing and basic computer knowledge. I am eager to develop new skills, work responsibly, support a team and complete assigned tasks on time.</p>
+      </div>
+    </section>
+
+    <section id="education" class="reveal">
+      <div class="section-head"><small>02 / Education</small><h2 class="section-title">Academic Background</h2></div>
+      <div class="card timeline">
+        <div class="timeline-item">
+          <h3>B.Sc. Information Technology</h3>
+          <div class="muted">Navarasam Arts and Science College for Women</div>
+          <div class="muted">Currently studying · 3rd Year</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="reveal">
+      <div class="section-head"><small>03 / Skills</small><h2 class="section-title">What I Bring</h2><p class="section-sub">Skills and knowledge stated for entry-level opportunities.</p></div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Professional Skills</h3>
+          <div class="chips">
+            <span class="chip">Teamwork</span><span class="chip">Tamil Communication</span>
+            <span class="chip">Basic English</span><span class="chip">Average Typing</span>
+            <span class="chip">Time Management</span><span class="chip">Willingness to Learn</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Technical Knowledge</h3>
+          <div class="chips">
+            <span class="chip">Basic Computer Skills</span><span class="chip">MS Office</span>
+            <span class="chip">HTML</span><span class="chip">CSS</span>
+            <span class="chip">JavaScript</span><span class="chip">React · Learning</span>
+            <span class="chip">Email & Internet</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="interests" class="reveal">
+      <div class="section-head"><small>04 / Interests</small><h2 class="section-title">Areas of Interest</h2></div>
+      <div class="grid-2">
+        <div class="card"><h3>E-commerce & Online Support</h3><p>Interested in learning how online businesses operate and how to support customers and teams through digital channels.</p></div>
+        <div class="card"><h3>Freelancing & Web Development</h3><p>Interested in building practical skills, exploring freelance work and continuing to learn website development.</p></div>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="section-head"><small>05 / Strengths</small><h2 class="section-title">Personal Strengths</h2></div>
+      <div class="strengths">
+        <div class="strength">Responsible</div><div class="strength">Dedicated</div>
+        <div class="strength">Positive Attitude</div><div class="strength">Adaptable</div>
+      </div>
+    </section>
+
+    <section id="contact" class="reveal">
+      <div class="card contact">
+        <div class="section-head"><small>06 / Contact</small><h2 class="section-title">Let's Connect</h2></div>
+        <p class="section-sub">Available for suitable part-time, remote opportunities. I would be glad to discuss how I can contribute and learn.</p>
+        <div class="actions" style="justify-content:center">
+          <a class="btn primary" href="mailto:adharshini0504@gmail.com">adharshini0504@gmail.com</a>
+          <a class="btn" href="tel:+918778546134">+91 8778546134</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap">© <span id="year"></span> Dharshini A · Digital Resume</div></footer>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
